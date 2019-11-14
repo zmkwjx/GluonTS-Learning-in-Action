@@ -9,13 +9,14 @@ from gluonts.dataset import common
 from gluonts.dataset.util import to_pandas
 from gluonts.model.predictor import Predictor
 
-url  = httpsraw.githubusercontent.comnumentaNABmasterdatarealTweetsTwitter_volume_AMZN.csv
+url = "https://raw.githubusercontent.com/numenta/NAB/master/data/realTweets/Twitter_volume_AMZN.csv"
 df   = pd.read_csv(url, header=0, index_col=0)
-data = common.ListDataset([{start df.index[0],
-    target df.value[2015-04-23 00:00:00]}],freq=H)
+data = common.ListDataset([{"start": df.index[0],
+                            "target": df.value[:"2015-04-23 00:00:00"]}],
+                          freq="H")
 
-estimator = deepar.DeepAREstimator(freq=H, prediction_length=24)
-predictor = estimator.train(training_data=data)
+estimator = deepar.DeepAREstimator(freq="H", prediction_length=24)
+predictor = estimator.train(training_data=train_data)
 
 for test_entry, forecast in zip(train_data, predictor.predict(train_data))
     to_pandas(test_entry)[-60].plot(linewidth=2)

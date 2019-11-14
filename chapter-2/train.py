@@ -10,8 +10,8 @@ from gluonts.dataset import common
 from gluonts.dataset.util import to_pandas
 from gluonts.model.predictor import Predictor
 
-train_data = common.FileDataset("D:\\phpStudy\\PHPTutorial\\WWW\\mxnet\\TS\\test\\FaceData\\train", freq="H")
-test_data  = common.FileDataset("D:\\phpStudy\\PHPTutorial\\WWW\\mxnet\\TS\\test\\FaceData\\val", freq="H")
+train_data = common.FileDataset("/home/root/mxnetTS/GluonTS-Learning-in-Action/chapter-2/data/train", freq="H")
+test_data  = common.FileDataset("/home/root/mxnetTS/GluonTS-Learning-in-Action/chapter-2/data/val", freq="H")
 
 estimator = deepar.DeepAREstimator(
     prediction_length=24,
